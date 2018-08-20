@@ -4,6 +4,7 @@
 
 #include "config.h"
 #include "bridgemap.h"
+#include "print.h"
 
 RF24 radio(CE, CSN); //ce,cs pin
 
