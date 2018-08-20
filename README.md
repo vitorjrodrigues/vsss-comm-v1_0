@@ -8,24 +8,24 @@ CONTENT:
 
   ufpbots_commtest_tx
   
-    Sintaxe.txt             - A quick textfile guide to the Syntax used by the platform to send data
-    output.h                - Header with configurations for the output value
-    ufpbots_commtest_tx.ino - Main file
+    Sintaxe.txt               - A quick textfile guide to the Syntax used by the platform to send data
+    output.h                  - Header with configurations for the output value
+    ufpbots_commtest_tx.ino   - Main File
   ufpbots_spintest
     
-    -a
+    ufpbots_spintest.ino      - Main File
     
   ufpbots_transmissor3
     
-    -a
+    config.h	                - Header with configurations for the TX
+    ufpbots_transmissor3.ino  - Main File
     
   ufpbots_receptor
     
-    -a
+    bridgemap.h	              - Header with decoding formulas for the Logical Output Values
+    config.h                  - Header with configurations for the RX
+    print.h                   - Optional Header with functions to send over serial the recieved values (for debug purposes only)
+    ufpbots_receptor.ino      - Main File
     
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
->>  ufpbots_commtest_tx
->>  ufpbots_spintest
->>  ufpbots_transmissor3
->>  ufpbots_receptor
