@@ -8,7 +8,7 @@ CONTENT:
 
   ufpbots_commtest_tx
   
-    -a
+    
     
   ufpbots_spintest
     
