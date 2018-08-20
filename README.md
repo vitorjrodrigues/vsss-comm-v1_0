@@ -4,7 +4,9 @@ This repository presents four directories, with varying applications in regards 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-CONTENT:
+CONTENTS:
+
+
    ufpbots_spintest: Algorithm used to test the H-Bridge. Motors will turn clock-wise (can be altered in code if needed) at Half-Speed (50% of PWM duty cycle).
    
     ufpbots_spintest.ino      - Main File
