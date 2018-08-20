@@ -1,7 +1,6 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-#include <printf.h>
 
 #include "output.h"
 
@@ -18,7 +17,6 @@ void setup() {
   printf_begin();
   radio.stopListening();
   radio.openWritingPipe(add1);
-  //radio.printDetails(); //check if there is an error appear when you try to connect nRF to arduino
   Serial.println("|>CommTest Ready<|\n Radio is ON");
   Serial.println("\t!\t Start/Resume Transmission\n\t@\tHalt Transmission");
   Serial.print("Insert your desired PWM value (0 to 255)");
