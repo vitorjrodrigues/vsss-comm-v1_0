@@ -1,8 +1,11 @@
 
 //#define SEL_1 8
-//#pdefine SEL_0 7
+//#define SEL_0 7
 //#define MODE  2
+#define CE  8
+#define CSN 7
 
+const uint64_t add1 = 0x0a0c0a0c0aLL;
 uint8_t transmit_mode = 0;
 uint8_t robo_ID = 1;//0;
 
