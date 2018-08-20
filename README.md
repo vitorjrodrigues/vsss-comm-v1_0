@@ -8,8 +8,9 @@ CONTENT:
 
   ufpbots_commtest_tx
   
-    
-    
+    Sintaxe.txt - A quick textfile guide to the Syntax used by the platform to send data
+    output.h	- Header with configurations for the output value
+    ufpbots_commtest_tx.ino	- Main file
   ufpbots_spintest
     
     -a
