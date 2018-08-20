@@ -1,7 +1,6 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-#include <printf.h>
 
 #include "config.h"
 
@@ -22,7 +21,6 @@ void setup() {
   printf_begin();
   radio.stopListening();
   radio.openWritingPipe(add1);
-  //radio.printDetails(); //check if there is an error appear when you try to connect nRF to arduino
   Serial.println("|>Transmitter Initialized<|");
 }
 
