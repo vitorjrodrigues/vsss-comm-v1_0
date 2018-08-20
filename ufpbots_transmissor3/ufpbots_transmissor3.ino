@@ -4,9 +4,6 @@
 
 #include "config.h"
 
-#define CE  8
-#define CSN 7
-
 // declare variables
 RF24 radio(CE, CSN); //ce,csn pin
 const uint64_t add1 = 0x0a0c0a0c0aLL;
