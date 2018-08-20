@@ -10,7 +10,6 @@ const uint64_t add1 = 0x0a0c0a0c0aLL;
 
 #include "config.h"
 #include "bridgemap.h"
-#include "print.h"
 
 // payload storage
 uint8_t RECEBE[10];  // Variavel a receber a transmissao em RF
