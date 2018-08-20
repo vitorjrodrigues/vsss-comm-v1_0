@@ -21,13 +21,13 @@ CONTENTS:
   >Algorithm used to transmit data. Despite having a desired syntax, this code will send any 10-byte sized input placed on the serial buffer.
     
     Sintaxe.txt               - A quick textfile guide to the Syntax used by the platform to send data
-    config.h	                - Header with configurations for the TX
+    config.h	               - Header with configurations for the TX
     ufpbots_transmissor3.ino  - Main File
     
   ufpbots_receptor:
   >Algorithm used to recieve data. Here, data recieved will be decoded according to the expected syntax, turning it in to PWM signals for the H-Bridge.
     
-    bridgemap.h	              - Header with decoding formulas for the Logical Output Values
+    bridgemap.h	            - Header with decoding formulas for the Logical Output Values
     config.h                  - Header with configurations for the RX
     print.h                   - Optional Header with functions to send over serial the recieved values (for debug purposes only)
     ufpbots_receptor.ino      - Main File
