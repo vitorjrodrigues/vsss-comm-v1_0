@@ -17,7 +17,7 @@ CONTENTS:
     output.h                  - Header with configurations for the output value
     ufpbots_commtest_tx.ino   - Main File
     
-  ufpbots_transmissor3:
+  ufpbots_transmissor3 (new version in ufpbots_transmissor4):
   >Algorithm used to transmit data. Despite having a desired syntax, this code will send any 10-byte sized input placed on the serial buffer.
     
     Sintaxe.txt               - A quick textfile guide to the Syntax used by the platform to send data
