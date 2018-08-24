@@ -1,0 +1,8 @@
+This textfile compiles guides on how to use all algorithms and properly assemble communication between a receiving robot (or multiple robots) and a transmitting terminal.
+
+\\Section 1 - ufpbots_receptor (Receiver)
+
+
+
+
+\\Section 2 - ufpbots_transmissor4 (Transmitter)
