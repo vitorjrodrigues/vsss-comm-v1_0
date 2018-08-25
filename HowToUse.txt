@@ -35,6 +35,29 @@ This, however, open the possibility of cross-transmitting between two independen
 ---
 The variable "robo_ID" is temporarily useless and defines the unique value correspondant to each individual robot. This can also be used to identify their respective pipes to the transmitter, as all active robots should have an ID that is 1, 2 or 3.
 ---
-The second call in the main file is "print.h", containing printMode() and printPayload() functions. Both 
+The second call in the main file is "print.h", containing printMode() and printPayload() functions. Both functions, as well as the entire header are meant to print details of the received data on a computer screen via serial port for debug purposes only and, thus, are entirely optional.
+In a near future, a switch will be implemented to turn ON/OFF this debug features, being OFF its default state. This way, receiving robots might not need to deal with unhandled serial output data.
+---
+The third and most important header to be called is "bridgemap.h". As the name suggest, this header deals with how data is converted and which h-bridge pins must receive which signal at any given time. The four values defined here represent the Arduino Pin numbers, matching corresponding ATMega328P pins that are connected with the H-bridges. Each function here acts as a macro for a possible logic in PWM values. For example, FRWD() represents Forward Logic (defined as 0d12) and will send both PWM values on the positive poles of the two H-bridges.
+---
+The main file itself consists of a two-phase loop. The first phase receives the payload sent from the transmitter, where as the second phase gets the robot corresponding values of logic, left pwm and right pwm based on its ID ("robo_ID") and interprets the logic value to determine the direction in which both pwm must be sent, calling the corresponding function, defined in "bridgemap.h".
 
 \\Section 2 - The Transmitter - ufpbots_transmissor4.ino
+
+---
+The transmitter is relatively simpler in comparison with the receiver. A call for the header "config.h", similar to the one found in the receiver, is the first thing done. After that, the program initializes opening the radio and required amount of pipes to communicate with receivers. Entering the loop, the transmitter will always check if there is data on the serial input buffer. If so, it will first flush all previous data by filling the payload variable with zeros. Then, it will read incoming bytes until an end marker is detected (currently the "newline" character) and call write(), which will send data stored on "payload" to all pipes opened and afterwards, the loop will check again for incoming serial data.
+---
+\\Section 3 - Test Codes - ufpbots_spintest.ino & ufpbots_commtest_tx.ino
+
+---
+The Spin Test code is a simple test just to verify the connection between microcontroller and H-bridge and also to perform battery duration tests. It consists of perpetually sending a 50% duty cycle pwm on both pairs of signal outputs, with opposite signs. Thus, the robot will remain rotating until turned off or until the battery gets weak enough, independent of external commands.
+This code must be proggramed as a receiver.
+---
+The Comm Test code is meant to verify wireless communication on receivers as well as to test several levels of pwm intensity. This can also be used to measure values such as motor dead zones. The code works based on serial inputs, currently interpreting decimal inputs of pwm (0 to 255) and ON and OFF inputs (! and @ respectively). In the near future, the code will also be able to detect logic inputs (such as "Forward" and "Rotate"), currently only walking forwards (but can be changed on the code if needed).
+This code must be programmed as a transmitter and can only work in conjunction with a Serial Data Sender.
+
+\\Section 4 - Pin Map for Reference
+
+A spredsheet can be found on the following link correlating all Pin values with their respective signals. Their order is determined by ATMEGA328P pins. Both transmitter and receiver use the same pin order.
+
+https://docs.google.com/spreadsheets/d/1S-HYjoQ0JZglUjNXtvuoN4eJLmLxVKt3ZJmsTvoUEK0/edit?usp=sharing
