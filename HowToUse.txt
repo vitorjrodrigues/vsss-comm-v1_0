@@ -1,4 +1,4 @@
-This textfile compiles guides on how to use all algorithms and properly assemble 
+This textfile compiles general instructions and descriptions on how to use all algorithms and properly assemble 
 communication between a receiving robot (or multiple robots) and a transmitting terminal.
 
 \\Section 0 - The RF24.h Library
