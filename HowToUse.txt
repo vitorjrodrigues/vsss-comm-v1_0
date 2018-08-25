@@ -6,7 +6,7 @@ communication between a receiving robot (or multiple robots) and a transmitting 
 The class reference for the RF24.h library can be found below:
 https://maniacbug.github.io/RF24/classRF24.html#aa7e8523f86f9f8f20c274e0c89a5fd45
 
-To avoid wasting time, all classes used in both algorithms will be mentioned here:
+To avoid time wasting, all classes used in both algorithms will be mentioned here:
 RF24::RF24	
 RF24::available
 RF24::begin
