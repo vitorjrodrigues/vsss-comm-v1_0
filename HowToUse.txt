@@ -24,7 +24,8 @@ RF24::write
 The first call in this function is to the header "config.h". 
 All pre-defined values and pre-loop functions are found here for better code management.
 ---
-CE and CSN values represent the Arduino Uno pin numbers (which may or may not coincide with ATMega328P pins) on which the Chip Enable (CE) and Chip Select Not (CSN) from the nRF24L01+ module are connected, respectively. 
+CE and CSN values represent the Arduino Uno pin numbers (which may or may not coincide with ATMega328P pins) on which the Chip Enable
+(CE) and Chip Select Not (CSN) from the nRF24L01+ module are connected, respectively. 
 Altering these values WILL directly affect the communication success (a badly connected pair of CE and CSN will transmit random values even when not supposed to transmit at all).
 The first procedure to check for errors on an malfunction transmitter is to check individually CE and CSN values in their algorithmic definitions and verify if these numbers match their physical connections.
 For the printed circuit board used as receiver, algorithmic definitions for CE must always be 8 (meaning ATMega328P pin 14) and for CSN must always be 7 (meaning ATMega328P pin 13). Any other values will make reception of data fail.
