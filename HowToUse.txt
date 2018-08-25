@@ -3,9 +3,10 @@ communication between a receiving robot (or multiple robots) and a transmitting 
 
 \\Section 0 - The RF24.h Library
 
+---
 The class reference for the RF24.h library can be found below:
 https://maniacbug.github.io/RF24/classRF24.html#aa7e8523f86f9f8f20c274e0c89a5fd45
-
+---
 To avoid time wasting, all classes used in both algorithms will be mentioned here:
 RF24::RF24	
 RF24::available
@@ -17,6 +18,7 @@ RF24::startListening
 RF24::stopListening
 RF24::read
 RF24::write
+---
 
 \\Section 1 - The Receiver - ufpbots_receptor.ino --------------------------------------------------------------------------------------
 
@@ -59,6 +61,7 @@ poles of the two H-bridges.
 The main file itself consists of a two-phase loop. The first phase receives the payload sent from the transmitter, where as the
 second phase gets the robot corresponding values of logic, left pwm and right pwm based on its ID ("robo_ID") and interprets the
 logic value to determine the direction in which both pwm must be sent, calling the corresponding function, defined in "bridgemap.h".
+---
 
 \\Section 2 - The Transmitter - ufpbots_transmissor4.ino
 
@@ -70,6 +73,7 @@ If so, it will first flush all previous data by filling the payload variable wit
 end marker is detected (currently the "newline" character) and call write(), which will send data stored on "payload" to all pipes
 opened and afterwards, the loop will check again for incoming serial data.
 ---
+
 \\Section 3 - Test Codes - ufpbots_spintest.ino & ufpbots_commtest_tx.ino
 
 ---
@@ -83,10 +87,13 @@ can also be used to measure values such as motor dead zones. The code works base
 inputs of pwm (0 to 255) and ON and OFF inputs (! and @ respectively). In the near future, the code will also be able to detect 
 logic inputs (such as "Forward" and "Rotate"), currently only walking forwards (but can be changed on the code if needed).
 This code must be programmed as a transmitter and can only work in conjunction with a Serial Data Sender.
+---
 
 \\Section 4 - Pin Map for Reference
 
+---
 A spredsheet can be found on the following link correlating all Pin values with their respective signals. Their order is determined
 by ATMEGA328P pins. Both transmitter and receiver use the same pin order.
-
+---
 https://docs.google.com/spreadsheets/d/1S-HYjoQ0JZglUjNXtvuoN4eJLmLxVKt3ZJmsTvoUEK0/edit?usp=sharing
+---
