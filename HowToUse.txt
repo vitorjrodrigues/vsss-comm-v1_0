@@ -1,8 +1,40 @@
-This textfile compiles guides on how to use all algorithms and properly assemble communication between a receiving robot (or multiple robots) and a transmitting terminal.
+This textfile compiles guides on how to use all algorithms and properly assemble 
+communication between a receiving robot (or multiple robots) and a transmitting terminal.
 
-\\Section 1 - ufpbots_receptor (Receiver)
+\\Section 0 - The RF24.h Library
 
+The class reference for the RF24.h library can be found below:
+https://maniacbug.github.io/RF24/classRF24.html#aa7e8523f86f9f8f20c274e0c89a5fd45
 
+To avoid wasting time, all classes used in both algorithms will be mentioned here:
+RF24::RF24	
+RF24::available
+RF24::begin
+RF24::openReadingPipe
+RF24::openWritingPipe
+RF24::setPALevel
+RF24::startListening
+RF24::stopListening
+RF24::read
+RF24::write
 
+\\Section 1 - The Receiver - ufpbots_receptor.ino --------------------------------------------------------------------------------------
 
-\\Section 2 - ufpbots_transmissor4 (Transmitter)
+---
+The first call in this function is to the header "config.h". 
+All pre-defined values and pre-loop functions are found here for better code management.
+---
+CE and CSN values represent the Arduino Uno pin numbers (which may or may not coincide with ATMega328P pins) on which the Chip Enable (CE) and Chip Select Not (CSN) from the nRF24L01+ module are connected, respectively. 
+Altering these values WILL directly affect the communication success (a badly connected pair of CE and CSN will transmit random values even when not supposed to transmit at all).
+The first procedure to check for errors on an malfunction transmitter is to check individually CE and CSN values in their algorithmic definitions and verify if these numbers match their physical connections.
+For the printed circuit board used as receiver, algorithmic definitions for CE must always be 8 (meaning ATMega328P pin 14) and for CSN must always be 7 (meaning ATMega328P pin 13). Any other values will make reception of data fail.
+---
+The variable "add1" describes the 5-byte hex value for the address on which transmitter and receiver will communicate themselves.
+Since this type of connection is pipe-like, its extremely dangerous to connect multiple receivers or multiple transmitters on a same pipe adress. However, a single transmitter can connect with up to 5 receivers and send them data simoutaneously.
+This, however, open the possibility of cross-transmitting between two independent communication systems. So, to avoid this, all pipe adresses connected to the same transmitter must share the same 4 MSB, meaning the pipe adress consists of a 4 byte part indicating the network in which it belongs and the last 1 byte indicates the individual value of that unique pipe (a more clarifying example can be found on the link for the RF24.h library)
+---
+The variable "robo_ID" is temporarily useless and defines the unique value correspondant to each individual robot. This can also be used to identify their respective pipes to the transmitter, as all active robots should have an ID that is 1, 2 or 3.
+---
+The second call in the main file is "print.h", containing printMode() and printPayload() functions. Both 
+
+\\Section 2 - The Transmitter - ufpbots_transmissor4.ino
