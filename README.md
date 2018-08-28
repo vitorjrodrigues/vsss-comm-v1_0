@@ -29,7 +29,8 @@ CONTENTS:
     
     bridgemap.h	            - Header with decoding formulas for the Logical Output Values
     config.h                  - Header with configurations for the RX
-    print.h                   - Optional Header with functions to send over serial the recieved values (for debug purposes only)
+    print.h                   - Optional Header with functions to send over serial the recieved values 
+                                (for debug purposes only)
     ufpbots_receptor.ino      - Main File
     
 %%%%%%%%%%%%%%%%%%%%%%%%%
