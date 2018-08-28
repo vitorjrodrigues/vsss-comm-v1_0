@@ -20,7 +20,7 @@ RF24::read
 RF24::write
 ---
 
-\\Section 1 - The Receiver - ufpbots_receptor.ino --------------------------------------------------------------------------------------
+\\Section 1 - The Receiver - ufpbots_receptor.ino 
 
 ---
 The first call in this function is to the header "config.h". 
