@@ -1,8 +1,8 @@
-=========================================================================================================================================
+=======================================================================================================================================
 Update 29-08-2018 19h33
  - updated file 'ufpbots_transmissor4.ino'
   >changes:
     added a variable (int sent) to recieve return values of radio.write() for debug purposes;
     replaced loop for serial buffer (Serial.available()) for an ifcase due to issues related with it;
     radio.write() was duplicated to avoid issues with nRF halting transmission by lack of data in its buffer.
-=========================================================================================================================================
+=======================================================================================================================================
