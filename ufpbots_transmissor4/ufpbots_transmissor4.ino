@@ -20,7 +20,6 @@ void loop() {
   if(Serial.available()) {
     memset(payload, 0, sizeof(payload));
     Serial.readBytes(payload, sizeof(payload));
-    printOutput(payload);
         sent = radio.write(payload,sizeof(payload)); 
         sent = radio.write(payload,sizeof(payload)); 
   }
