@@ -35,4 +35,6 @@ CONTENTS:
     
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
->|For more info on how to use these files, please read throughly the file "HowToUse.txt" also present here.
+*For more info on how to use these files, please read throughly the file "HowToUse.txt" also present here.
+
+*The file "Log.txt" describes with detail every update made to the files.
