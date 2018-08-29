@@ -7,6 +7,7 @@
 // declare variables
 RF24 radio(CE, CSN); //ce,csn pin
 uint8_t payload[10];
+int  sent;
 
 void setup() {
   //TransmitterConfiguration();
@@ -16,10 +17,11 @@ void setup() {
 }
 
 void loop() {
-  while(Serial.available())
-  {
+  if(Serial.available()) {
     memset(payload, 0, sizeof(payload));
-    Serial.readBytesUntil('\n', payload, sizeof(payload));
-    radio.write(payload, sizeof(payload));
+    Serial.readBytes(payload, sizeof(payload));
+    printOutput(payload);
+        sent = radio.write(payload,sizeof(payload)); 
+        sent = radio.write(payload,sizeof(payload)); 
   }
 }
