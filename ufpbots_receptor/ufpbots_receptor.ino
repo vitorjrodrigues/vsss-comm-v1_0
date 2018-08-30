@@ -12,10 +12,6 @@ RF24 radio(CE, CSN); //ce,cs pin
 uint8_t RECEBE[10];  // Variavel a receber a transmissao em RF
 
 void setup() {
-  //----- Define fisicamente o endereço do robô
-  //pinMode(2,INPUT);//para robo 1
-  //pinMode(3,INPUT);//para robo 2
-
   //----- Configura os pinos de PWM para a ponte H (ver bridgemap.h para definicao)
   setPWM();
 
