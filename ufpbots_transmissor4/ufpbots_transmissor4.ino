@@ -1,7 +1,6 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-
 #include "config.h"
 
 // declare variables
@@ -21,7 +20,7 @@ void loop() {
   if(Serial.available()) {
     memset(payload, 0, sizeof(payload));
     Serial.readBytes(payload, sizeof(payload));
-        sent = radio.write(payload,sizeof(payload)); 
-        sent = radio.write(payload,sizeof(payload)); 
+    sent = radio.write(payload,sizeof(payload)); 
+    sent = radio.write(payload,sizeof(payload)); 
   }
 }
