@@ -6,6 +6,7 @@
 
 // declare variables
 RF24 radio(CE, CSN); //ce,csn pin
+const uint64_t add1 = 0x0a0c0a0c0aLL;
 uint8_t payload[10];
 int  sent;
 
