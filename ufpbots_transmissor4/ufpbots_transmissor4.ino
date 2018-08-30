@@ -11,6 +11,7 @@ int  sent;
 
 void setup() {
   //TransmitterConfiguration();
+  Serial.begin(38400);
   radio.begin();
   radio.stopListening();
   radio.openWritingPipe(add1);
