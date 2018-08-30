@@ -16,7 +16,7 @@ void setup() {
   setPWM();
 
   //----- Configura a serial para comunicação com o robô
-  Serial.begin(9600);
+  Serial.begin(38400);
   radio.begin();
   radio.setPALevel(RF24_PA_LOW);
   radio.openReadingPipe(1, add1);
