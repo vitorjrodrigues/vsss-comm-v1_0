@@ -1,6 +1,6 @@
-#define MODE  4
-#define CE  8
-#define CSN 7
+//#define MODE  4
+#define CE  9
+#define CSN 4
 
 int transmit_mode = 0;
 
