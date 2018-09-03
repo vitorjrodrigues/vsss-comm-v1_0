@@ -12,3 +12,9 @@ Update 30-08-2018 16h53
     added missing "Serial.begin()" at setup branch on 'transmissor4' to properly use Serial functions;
     baud rate updated to 38400 on both algorithms to optimize usage of the RF module.
 =============================================================================================================================
+Update 03-09-2018 18h03
+ - updated file 'config.h' over 'ufpbots_transmissor4.ino'
+  >changes:
+    updated values for CE and CSN definitions to correlate with the new transmitter hardware;
+    commented MODE definition as it is still currently unused.
+=============================================================================================================================
