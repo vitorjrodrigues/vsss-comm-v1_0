@@ -28,5 +28,4 @@ Update 04-09-2018 13h56
     now packets are read on an intermediary buffer, have their values checked and only then are transmitted;
     incorrect data is now less frequent, but latency is substancially higher;
     also reduced payload size to 10 Bytes for compatibility with 'ufpbots_transmissor4.ino'.
-   
 =============================================================================================================================
