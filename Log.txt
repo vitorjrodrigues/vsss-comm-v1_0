@@ -18,3 +18,15 @@ Update 03-09-2018 18h03
     updated values for CE and CSN definitions to correlate with the new transmitter hardware;
     commented MODE definition as it is still currently unused.
 =============================================================================================================================
+Update 04-09-2018 13h56
+ - updated file 'ufpbots_transmissor4.ino'
+  >changes:
+    reduced payload size from standard (32 bytes) to 10 Bytes, in an attempt to reduce packet loss;
+    forced tx buffer on transmitter to be emptied at every iteration expecting a reduction on data loss;
+ - added new version for receiver in 'ufpbots_receptor2'
+  >changes:
+    now packets are read on an intermediary buffer, have their values checked and only then are transmitted;
+    incorrect data is now less frequent, but latency is substancially higher;
+    also reduced payload size to 10 Bytes for compatibility with 'ufpbots_transmissor4.ino'.
+   
+=============================================================================================================================
