@@ -22,7 +22,7 @@ void setup() {
   setPWM();
 
   //----- Configura a serial para comunicação com o robô
-  Serial.begin(115200);
+  Serial.begin(38400);
   memset(OUT, 0, sizeof(OUT));
   radio.begin();
   radio.setPayloadSize(10);
