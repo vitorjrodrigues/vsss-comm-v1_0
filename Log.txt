@@ -29,3 +29,9 @@ Update 04-09-2018 13h56
     incorrect data is now less frequent, but latency is substancially higher;
     also reduced payload size to 10 Bytes for compatibility with 'ufpbots_transmissor4.ino'.
 =============================================================================================================================
+Update 21-09-2018 16h37
+ - minor adjustment on 'ufpbots_receptor2.ino'
+  >changes:
+    corrected mismatching baud rate for serial comm, now 38400.
+=============================================================================================================================
+
