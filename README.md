@@ -32,8 +32,7 @@ This repository presents four directories, with varying applications in regards 
                                 (for debug purposes only)
     ufpbots_receptor2.ino      - Main File
     
-%%%%%%%%%%%%%%%%%%%%%%%%%
 
-*For more info on how to use these files, please read throughly the file "HowToUse.txt" also present here.
+###### - For more info on how to use these files, please read throughly the file "HowToUse.txt" also present here.
 
-*The file "Log.txt" describes with detail every update made to the files.
+###### - The file "Log.txt" describes with detail every update made to the files.
