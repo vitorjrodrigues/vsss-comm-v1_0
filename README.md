@@ -26,7 +26,7 @@ This repository presents four directories, with varying applications in regards 
 #### ufpbots_receptor2:
   - Algorithm used to recieve data. Here, data recieved will be decoded according to the expected syntax, turning it in to PWM signals for the H-Bridge.
     
-    >bridgemap.h	            - Header with decoding formulas for the Logical Output Values
+    bridgemap.h	            - Header with decoding formulas for the Logical Output Values
     config.h                  - Header with configurations for the RX
     print.h                   - Optional Header with functions to send over serial the recieved values 
                                 (for debug purposes only)
