@@ -34,4 +34,9 @@ Update 21-09-2018 16h37
   >changes:
     corrected mismatching baud rate for serial comm, now 38400.
 =============================================================================================================================
-
+Update 24-09-2018 19h14
+ - included 'ufpbots_swapper'
+   >functionality:
+     varies PWM from a pre-defined minimum to a pre-defined maximum alternating between all four logic states
+     can be used to verify dead zones or to test communication responsiveness
+=============================================================================================================================
