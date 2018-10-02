@@ -24,8 +24,10 @@ void loop() {
   if(Serial.available()) {
     memset(payload, 0, sizeof(payload));
     Serial.readBytes(payload, sizeof(payload));
-    sent = radio.write(payload,sizeof(payload)); 
-    sent = radio.write(payload,sizeof(payload)); 
+    if(payload[0] == 255) {
+      sent = radio.write(payload,sizeof(payload)); 
+      sent = radio.write(payload,sizeof(payload)); 
+    }
   }
   radio.flush_tx();
 }
