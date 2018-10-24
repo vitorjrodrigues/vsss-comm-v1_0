@@ -5,7 +5,7 @@ static uint8_t serial_state = 0;
 static serial_packet_t serial_packet;
 
 uint8_t checksum(void *buffer, unsigned size) {
-  uint8_t *p = buffer;
+  uint8_t *p = (uint8_t *)buffer;
   uint8_t cs = 0;
   while (size--) cs += *p++;
 
