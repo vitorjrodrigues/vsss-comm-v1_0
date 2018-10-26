@@ -3,8 +3,6 @@
 #include <RF24.h>
 #include <nRF24L01.h>
 
-#define BOT_ID 0
-
 #define MOTOR_ENABLE 2
 #define PWM_LEFT_FWD 9
 #define PWM_LEFT_BWD 10
@@ -13,7 +11,25 @@
 #define RADIO_CS 7
 #define RADIO_CE 8
 
+#define BOT_ID3 PWM_RIGHT_BWD // MRN
+#define BOT_ID2 PWM_RIGHT_FWD // MRP
+#define BOT_ID1 PWM_LEFT_BWD // MLN
+#define BOT_ID0 PWM_LEFT_FWD // MLP
+
+uint8_t bot_id = 0;
 payload_t payload;
+
+uint8_t botReadId() {
+  pinMode(BOT_ID3, INPUT);
+  pinMode(BOT_ID2, INPUT);
+  pinMode(BOT_ID1, INPUT);
+  pinMode(BOT_ID0, INPUT);
+  delay(100);
+  return digitalRead(BOT_ID3) * 0x08
+       + digitalRead(BOT_ID2) * 0x04
+       + digitalRead(BOT_ID1) * 0x02
+       + digitalRead(BOT_ID0) * 0x01;
+}
 
 void setPwm(int8_t left, int8_t right) {
   // left and right are [-127..+127] for max backward to max forward.
@@ -55,12 +71,17 @@ void setPins() {
 RF24 radio(RADIO_CE, RADIO_CS);
 
 void setup() {
-  //----- Configura os robos para iniciarem parados
+  Serial.begin(1200);
+  bot_id = botReadId();
+  Serial.print("Bot ID ");
+  Serial.print(bot_id*1);
+  Serial.print(" booting...");
+
+  // Configure driver
   setPins();
   digitalWrite(MOTOR_ENABLE, HIGH);
 
   // Remote control inputs
-  Serial.begin(1200);
   radio.begin();
   radio.setPayloadSize(sizeof(payload_t));
   radio.openReadingPipe(1, RADIO_ADDRESS);
@@ -70,14 +91,14 @@ void setup() {
 void loop() {
   if (radio.available()) {
     radio.read(&payload, sizeof(payload));
-    setPwm(payload.cmd[BOT_ID].left, payload.cmd[BOT_ID].right);
+    setPwm(payload.cmd[bot_id].left, payload.cmd[bot_id].right);
   }
 
   if (Serial.available()) {
     payload_t *payload = serialDecoder(Serial.read());
     if (payload) setPwm(
-      payload->cmd[BOT_ID].left,
-      payload->cmd[BOT_ID].right
+      payload->cmd[bot_id].left,
+      payload->cmd[bot_id].right
     );
   }
 }
